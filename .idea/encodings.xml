@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="CP949" ?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="CP949">
+    <file url="file://$PROJECT_DIR$/main.c" charset="CP949"  />
+  </component>
+</project>
