@@ -5,15 +5,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int search(const int a[],int n,int key){
+int search(int a[],int n,int key){
     int i=0;
+    a[n]=key;
     while(1){
-        if(i==n)
-            return -1;
         if(a[i]==key)
-            return i;
+            break;
         i++;
     }
+    return i==1?-1:i;
+
 }
 
 int main(void){
@@ -22,7 +23,7 @@ int main(void){
     puts("선형 검색");
     printf("요소 개수 : ");
     scanf("%d",&nx);
-    x=calloc(nx,sizeof(int));
+    x=calloc(nx+1,sizeof(int));
     for(i=0;i<nx;i++){
         printf("x[%d] : ",i);
         scanf("%d",&x[i]);

@@ -5,32 +5,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int search(const int a[], int n, int key)
-{
-    int i;
+int bin_search(const int a[],int n,int key) {
 
-    printf("   |");
-    for (i = 0; i < n; i++)
-        printf("%3d", i);
-    printf("\n---+");
-    for (i = 0; i < n; i++)
-        printf("---", i);
-    printf("-\n");
+    int pl = 0;
+    int pr = n - 1;
+    int pc;
 
-    for (i = 0; i < n; i++) {
-        int j;
-        printf("   |");
-        printf("%*s", 3 * (i - 1) + 5, "");
-        printf("*\n");
-        printf("%3d|", i);
-        for (j = 0; j < n; j++)
-            printf("%3d", a[j]);
-        putchar('\n');
-
-        if (a[i] == key)
-            return i;
-
-        printf("   |\n");
+    for(pl;pl<=pr;){
+        pc = (pl + pr) / 2;
+        if (a[pc] == key) {
+            return pc;
+        } else if (a[pc] < key) {
+            pl = pc + 1;
+        } else {
+            pr = pc - 1;
+        }
     }
 
     return -1;
@@ -55,7 +44,7 @@ int main(void) {
     }
     printf("검색값 : ");
     scanf("%d",&ky);
-    idx=search(x,nx,ky);
+    idx=bin_search(x,nx,ky);
     if(idx==-1){
         puts("검색에 실패했습니다.");
     } else{
