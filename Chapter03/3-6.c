@@ -2,11 +2,15 @@
 // Created by Min on 2019-08-30.
 //
 
+//
+// Created by Min on 2019-08-30.
+//
+
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int int_cmp(const int *a, const int *b)
+int int_cmpr(const int *a, const int *b)
 {
     if (*a < *b)
         return -1;
@@ -27,7 +31,7 @@ int main(void)
     scanf("%d", &nx);
     x = calloc(nx, sizeof(int));
 
-    printf("오름차순으로 입력하세요.\n");
+    printf("내림차순으로 입력하세요.\n");
     printf("x[0] : ");
     scanf("%d", &x[0]);
     for (i = 1; i < nx; i++) {
