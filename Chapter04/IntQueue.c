@@ -1,3 +1,7 @@
+//
+// Created by Min on 2019-09-11.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "IntQueue.h"
@@ -69,7 +73,7 @@ int Search(const IntQueue *q,int x){
     int i,idx;
     for(i=0;i<q->num;i++){
         if(q->que[idx=(i+q->front)%q->max]==x){
-        return idx;
+            return idx;
         }
     }
     return -1;
