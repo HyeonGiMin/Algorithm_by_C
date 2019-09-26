@@ -1,3 +1,7 @@
+//
+// Created by Min on 2019-09-26.
+//
+
 #include<stdio.h>
 
 int pos[8];
