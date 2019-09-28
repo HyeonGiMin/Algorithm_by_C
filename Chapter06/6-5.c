@@ -1,23 +1,25 @@
+//
+// Created by Min on 2019-09-29.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 
-void shell(int a[],int n){
-    int i,j,h;
-    for(h=n/2;h>0;h/=2){
-        for(i=h;i<n;i++){
-            int tmp=a[i];
-            for(j=i-h;j>=0&&a[j]>tmp;j-=h){
-                a[j+h]=a[j];
-            }
-            a[j+h]=tmp;
+void insertion(int a[],int n){
+    int i,j;
+    for(i=1;i<n;i++){
+        int tmp=a[i];
+        for(j=i;j>0&&a[j-1]>tmp;j--){
+            a[j]=a[j-1];
         }
+        a[j]=tmp;
     }
 }
 
 int main(void){
     int i,nx;
     int *x;
-    puts("쉘 정렬");
+    puts("단순 삽입 정렬");
 
     printf("요소 개수 : ");
     scanf("%d",&nx);
@@ -31,7 +33,7 @@ int main(void){
         scanf("%d",&x[i]);
     }
 
-    shell(x,nx);
+    insertion(x,nx);
 
     puts("오름차순으로 정렬했습니다.");
     for(i=0;i<nx;i++){
